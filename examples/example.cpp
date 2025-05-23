@@ -5,7 +5,6 @@
 #include <SDL_ttf.h>
 
 int main(int , char**) {
-    std::cout << "Hello, World!" << std::endl;
     //初始化SDL
     if (SDL_Init(SDL_INIT_EVERYTHING) != 0) {
         std::cerr << "SDL_Init Error: " << SDL_GetError() << std::endl;

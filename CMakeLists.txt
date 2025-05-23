@@ -31,7 +31,11 @@ set(SDL2_LIBS
 
 include_directories(${SDL2_INCLUDE_DIR})
 
-add_executable(${TARGET} main.cpp)
+add_executable(${TARGET} src/main.cpp
+                         src/Game.cpp
+                         src/SceneMain.cpp
+                         
+)
 
 target_link_libraries(${TARGET} ${SDL2_LIBS})
 
@@ -44,3 +48,9 @@ add_custom_command(TARGET ${TARGET} POST_BUILD
         "${SDL2_LIB_DIR}/lib/x64/SDL2_mixer.dll"
         $<TARGET_FILE_DIR:${TARGET}>
 )
+
+# 启用示例模块（可选构建）
+option(BUILD_EXAMPLES "Build example programs" ON)
+if(BUILD_EXAMPLES)
+    add_subdirectory(examples)
+endif()
