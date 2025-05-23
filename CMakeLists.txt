@@ -24,7 +24,10 @@ set(SDL2_INCLUDE_DIR "${SDL2_LIB_DIR}/include")
 set(SDL2_LIBS
     "${SDL2_LIB_DIR}/lib/x64/SDL2.lib"
     "${SDL2_LIB_DIR}/lib/x64/SDL2main.lib"
-)
+    "${SDL2_LIB_DIR}/lib/x64/SDL2_image.lib"
+    "${SDL2_LIB_DIR}/lib/x64/SDL2_ttf.lib"
+    "${SDL2_LIB_DIR}/lib/x64/SDL2_mixer.lib"
+    )
 
 include_directories(${SDL2_INCLUDE_DIR})
 
@@ -36,5 +39,8 @@ target_link_libraries(${TARGET} ${SDL2_LIBS})
 add_custom_command(TARGET ${TARGET} POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
         "${SDL2_LIB_DIR}/lib/x64/SDL2.dll"
+        "${SDL2_LIB_DIR}/lib/x64/SDL2_image.dll"
+        "${SDL2_LIB_DIR}/lib/x64/SDL2_ttf.dll"
+        "${SDL2_LIB_DIR}/lib/x64/SDL2_mixer.dll"
         $<TARGET_FILE_DIR:${TARGET}>
 )
