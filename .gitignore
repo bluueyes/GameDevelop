@@ -1,0 +1,33 @@
+# 编译生成文件和目录
+bin/
+obj/
+*.o
+*.a
+*.so
+*.dll
+*.exe
+*.out
+Library/
+
+# 构建系统文件（如 CMake、Makefile 生成的）
+build/
+CMakeCache.txt
+CMakeFiles/
+Makefile
+*.cmake
+
+# IDE 配置文件（如 VS Code、CLion、Visual Studio）
+.vscode/
+.idea/
+*.sln
+*.vcxproj*
+*.user
+*.suo
+
+# 平台相关文件（如 macOS 的 .DS_Store）
+.DS_Store
+Thumbs.db
+
+# 日志和临时文件
+*.log
+*.tmp
