@@ -2,6 +2,9 @@
 #define SCENEMAIN_H
 
 #include "Scene.h"
+#include "Object.h"
+
+class Game;
 
 class SceneMain : public Scene
 {
@@ -13,6 +16,10 @@ public:
     void render() override;
     void clean() override;
     void handleEvents(SDL_Event* event) override;
+
+private:
+    Player player;
+    Game& game;
 };
 
 #endif // SCENEMAIN_H
